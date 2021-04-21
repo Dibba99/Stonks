@@ -7,5 +7,6 @@ target 'stonks' do
 
   # Pods for stonks
   pod 'Parse'
+  pod 'AlamofireImage'
 
 end

@@ -17,6 +17,7 @@
 		864658C0262CB5D6007727DB /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658BF262CB5D6007727DB /* FinanceViewController.swift */; };
 		864658C3262CB5E9007727DB /* TechnologyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658C2262CB5E9007727DB /* TechnologyViewController.swift */; };
 		864658D5262D3EA8007727DB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658D4262D3EA8007727DB /* RoundButton.swift */; };
+		864658D8262FD9B7007727DB /* FinanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658D7262FD9B7007727DB /* FinanceCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		864658BF262CB5D6007727DB /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		864658C2262CB5E9007727DB /* TechnologyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyViewController.swift; sourceTree = "<group>"; };
 		864658D4262D3EA8007727DB /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		864658D7262FD9B7007727DB /* FinanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceCell.swift; sourceTree = "<group>"; };
 		954B2912C5F9B9F81D2F14B5 /* Pods-stonks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stonks.release.xcconfig"; path = "Target Support Files/Pods-stonks/Pods-stonks.release.xcconfig"; sourceTree = "<group>"; };
 		9FCD81A5704C009CB0D8B34C /* Pods_stonks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stonks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C3BDD04DE2E4861954EF76 /* Pods-stonks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stonks.debug.xcconfig"; path = "Target Support Files/Pods-stonks/Pods-stonks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				864658BF262CB5D6007727DB /* FinanceViewController.swift */,
 				864658C2262CB5E9007727DB /* TechnologyViewController.swift */,
 				864658D4262D3EA8007727DB /* RoundButton.swift */,
+				864658D7262FD9B7007727DB /* FinanceCell.swift */,
 			);
 			path = stonks;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			files = (
 				864658D5262D3EA8007727DB /* RoundButton.swift in Sources */,
 				864658C3262CB5E9007727DB /* TechnologyViewController.swift in Sources */,
+				864658D8262FD9B7007727DB /* FinanceCell.swift in Sources */,
 				864658BD262CB54A007727DB /* LoginViewController.swift in Sources */,
 				864658C0262CB5D6007727DB /* FinanceViewController.swift in Sources */,
 				864658A2262BDB94007727DB /* AppDelegate.swift in Sources */,
