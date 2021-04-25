@@ -8,5 +8,8 @@ target 'stonks' do
   # Pods for stonks
   pod 'Parse'
   pod 'AlamofireImage'
+  pod 'NotificationBannerSwift', '~> 3.0.0'
+  pod 'MaterialComponents/TextControls+OutlinedTextAreas'
+  pod 'MaterialComponents/TextControls+OutlinedTextFields'
 
 end

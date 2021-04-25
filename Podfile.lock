@@ -3,13 +3,59 @@ PODS:
   - AlamofireImage (4.1.0):
     - Alamofire (~> 5.1)
   - Bolts/Tasks (1.9.1)
+  - MarqueeLabel (4.0.5)
+  - MaterialComponents/AnimationTiming (124.1.1)
+  - MaterialComponents/Availability (124.1.1)
+  - MaterialComponents/private/Math (124.1.1)
+  - "MaterialComponents/private/TextControlsPrivate+BaseStyle (124.1.1)":
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+  - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle (124.1.1)":
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Availability
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+  - "MaterialComponents/private/TextControlsPrivate+Shared (124.1.1)":
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/private/Math
+    - "MaterialComponents/TextControls+Enums"
+  - "MaterialComponents/private/TextControlsPrivate+TextFields (124.1.1)":
+    - MaterialComponents/private/Math
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+  - "MaterialComponents/TextControls+BaseTextAreas (124.1.1)":
+    - "MaterialComponents/private/TextControlsPrivate+BaseStyle"
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+    - MDFInternationalization
+  - "MaterialComponents/TextControls+BaseTextFields (124.1.1)":
+    - "MaterialComponents/private/TextControlsPrivate+BaseStyle"
+    - "MaterialComponents/private/TextControlsPrivate+Shared"
+    - "MaterialComponents/private/TextControlsPrivate+TextFields"
+    - MDFInternationalization
+  - "MaterialComponents/TextControls+Enums (124.1.1)"
+  - "MaterialComponents/TextControls+OutlinedTextAreas (124.1.1)":
+    - MaterialComponents/Availability
+    - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"
+    - "MaterialComponents/TextControls+BaseTextAreas"
+  - "MaterialComponents/TextControls+OutlinedTextFields (124.1.1)":
+    - MaterialComponents/Availability
+    - "MaterialComponents/private/TextControlsPrivate+OutlinedStyle"
+    - "MaterialComponents/TextControls+BaseTextFields"
+  - MDFInternationalization (2.0.0)
+  - NotificationBannerSwift (3.0.6):
+    - MarqueeLabel (~> 4.0.5)
+    - SnapKit (~> 5.0.1)
   - Parse (1.19.2):
     - Parse/Core (= 1.19.2)
   - Parse/Core (1.19.2):
     - Bolts/Tasks (= 1.9.1)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - AlamofireImage
+  - "MaterialComponents/TextControls+OutlinedTextAreas"
+  - "MaterialComponents/TextControls+OutlinedTextFields"
+  - NotificationBannerSwift (~> 3.0.0)
   - Parse
 
 SPEC REPOS:
@@ -17,14 +63,24 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - Bolts
+    - MarqueeLabel
+    - MaterialComponents
+    - MDFInternationalization
+    - NotificationBannerSwift
     - Parse
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  MaterialComponents: b9f58f24bf74588a83b2dce05802a11aaed5257d
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  NotificationBannerSwift: 7021be2338f8f29cf424b0aca43da462bf9e2a1a
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 568b9f79be0a6a4d3acbf6c41fae735d965049b6
+PODFILE CHECKSUM: dde61c42b99cc5d2cfbcf6b862a74112e238230a
 
 COCOAPODS: 1.10.1

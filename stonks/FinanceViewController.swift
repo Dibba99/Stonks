@@ -8,16 +8,24 @@
 import UIKit
 import Parse
 import AlamofireImage
+import NotificationBannerSwift
 
 class FinanceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    //
+
     
     var articles = [[String:Any]]()
     let refreshController = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let user = PFUser.current()!.username as! String
+        let banner = GrowingNotificationBanner(title: "Welcome back!", subtitle: "Hey \(user)! - explore new business headlines to make your future financial decision!", leftView: nil, rightView: nil, style: .success, colors: nil)
+        
+        banner.show()
         
         refreshController.addTarget(self, action: #selector(FinanceViewController.handleRefresh), for: .valueChanged)
         tableView.refreshControl = refreshController
@@ -42,16 +50,13 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
                 
                 self.tableView.reloadData()
                 
-                print(dataDictionary)
+                //print(dataDictionary)
              }
         }
         task.resume()
-        
-
+        tabbarConfig()
         // Do any additional setup after loading the view.
     }
-    
-    
     @objc func handleRefresh() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.tableView.reloadData()
@@ -60,6 +65,16 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
+    func tabbarConfig(){
+        guard let tabbar = self.tabBarController?.tabBar else { return }
+        tabbar.layer.cornerRadius = 50
+        tabbar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        tabbar.layer.masksToBounds = true
+        tabbar.layer.borderWidth = 0.2
+        tabbar.layer.borderColor = UIColor.black.cgColor
+    }
+    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
@@ -76,10 +91,12 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         let description = article["content"] as? String
         if description == nil {
             cell.contentLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
-            cell.contentLabel.text = "OOPS! Content not found, please click on cell to redirect to link"
+            cell.contentLabel.textColor = UIColor.red
+            cell.contentLabel.text = "OOPS! Content not found, please click on this cell to redirect to article link"
         }else{
-            cell.contentLabel.text = description
             cell.contentLabel.font = UIFont(name:"System - System", size: 14.0)
+            cell.contentLabel.textColor = UIColor.black
+            cell.contentLabel.text = description
         }
         
         let publisher = article["author"] as? String
@@ -97,17 +114,11 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell.posterView.af_setImage(withURL: posterURL!)
         
+        cell.backgroundView?.layer.cornerRadius = 5
+        cell.backgroundView?.clipsToBounds = true
+        
         return cell
     }
-    
-    
-    
-    
-    
-    
-
-    
-    
     @IBAction func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -116,15 +127,15 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         
         delegate.window?.rootViewController = loginViewController
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let index = tableView.indexPath(for: cell)!
+        let article = articles[index.row]
+        let websiteView = segue.destination as! WebsiteViewController
+        websiteView.article = article
+        tableView.deselectRow(at: index, animated: true)
+        
     }
-    */
-
 }
