@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g3H-Iv-Xgy">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="aRc-mD-QUm">
+            <objects>
+                <viewController id="g3H-Iv-Xgy" customClass="LaunchViewController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z08-Sy-Wxh">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kDr-wE-8tA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="launchSegue" id="fH9-Ax-Je9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UyQ-6e-a3n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="477" y="-2167"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="LoginViewController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +64,7 @@
                                 <rect key="frame" x="-55" y="-156" width="539" height="635"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pngegg" translatesAutoresizingMaskIntoConstraints="NO" id="7Kj-F7-Xa8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Kj-F7-Xa8">
                                 <rect key="frame" x="59" y="174" width="318" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -76,6 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AdM-fm-5jt"/>
                     <connections>
                         <segue destination="1Yt-1v-ed7" kind="presentation" identifier="loginSegue" id="5ba-0N-xaJ"/>
                     </connections>
@@ -158,6 +178,7 @@
                                             <outlet property="posterView" destination="ktQ-TC-iid" id="61A-d2-VlK"/>
                                             <outlet property="publishedLabel" destination="xHl-sD-OGK" id="uLF-bj-Uin"/>
                                             <outlet property="titleLabel" destination="axo-vk-sSB" id="n2z-bd-xgD"/>
+                                            <segue destination="Zf6-bz-2qj" kind="presentation" id="Bhc-8j-TGw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -184,7 +205,7 @@
         <!--Finance-->
         <scene sceneID="qqR-aE-k3A">
             <objects>
-                <viewController id="B78-3w-gbu" customClass="FinanceViewController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinanceViewController" id="B78-3w-gbu" customClass="FinanceViewController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gLF-Iy-QTr">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,7 +317,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACq-GL-tBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104" y="1669"/>
+            <point key="canvasLocation" x="104" y="1676"/>
+        </scene>
+        <!--Second Website View Controller-->
+        <scene sceneID="P1t-jB-t5h">
+            <objects>
+                <viewController id="Zf6-bz-2qj" customClass="SecondWebsiteViewController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FbF-ST-YIU">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="beZ-l7-sa1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jae-yd-pZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="1676"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gS5-md-P2t">
@@ -369,7 +405,6 @@
         <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
         <image name="clipart2517041" width="623" height="622"/>
         <image name="network" catalog="system" width="128" height="121"/>
-        <image name="pngegg" width="500" height="500"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

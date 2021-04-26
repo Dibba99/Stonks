@@ -13,7 +13,6 @@ import NotificationBannerSwift
 class FinanceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    //
 
     
     var articles = [[String:Any]]()

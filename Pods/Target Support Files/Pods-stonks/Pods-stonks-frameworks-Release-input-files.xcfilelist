@@ -8,3 +8,4 @@ ${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework
 ${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework
 ${BUILT_PRODUCTS_DIR}/Parse/Parse.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework

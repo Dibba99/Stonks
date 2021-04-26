@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		33C2241CB58F04B947EE64FC /* Pods_stonks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FCD81A5704C009CB0D8B34C /* Pods_stonks.framework */; };
+		8628258F263664FC0088B4A9 /* 41383-digital-finance-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8628258E263664FC0088B4A9 /* 41383-digital-finance-animation.json */; };
+		86282592263666040088B4A9 /* 9697-ftw.json in Resources */ = {isa = PBXBuildFile; fileRef = 86282591263666040088B4A9 /* 9697-ftw.json */; };
+		86282595263668930088B4A9 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86282594263668930088B4A9 /* LaunchViewController.swift */; };
+		862BD66C26363162006110EE /* SecondWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862BD66B26363162006110EE /* SecondWebsiteViewController.swift */; };
+		862BD67C26365C2B006110EE /* 34115-rocket-lunch.json in Resources */ = {isa = PBXBuildFile; fileRef = 862BD67B26365C2B006110EE /* 34115-rocket-lunch.json */; };
 		863C7CEB263626AE00241850 /* TechnologyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863C7CEA263626AE00241850 /* TechnologyCell.swift */; };
 		864658A2262BDB94007727DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658A1262BDB94007727DB /* AppDelegate.swift */; };
 		864658A4262BDB94007727DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658A3262BDB94007727DB /* SceneDelegate.swift */; };
@@ -23,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8628258E263664FC0088B4A9 /* 41383-digital-finance-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "41383-digital-finance-animation.json"; sourceTree = "<group>"; };
+		86282591263666040088B4A9 /* 9697-ftw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9697-ftw.json"; sourceTree = "<group>"; };
+		86282594263668930088B4A9 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		862BD66B26363162006110EE /* SecondWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondWebsiteViewController.swift; sourceTree = "<group>"; };
+		862BD67B26365C2B006110EE /* 34115-rocket-lunch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "34115-rocket-lunch.json"; sourceTree = "<group>"; };
 		863C7CEA263626AE00241850 /* TechnologyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyCell.swift; sourceTree = "<group>"; };
 		8646589E262BDB94007727DB /* stonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stonks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		864658A1262BDB94007727DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +107,11 @@
 				864658D7262FD9B7007727DB /* FinanceCell.swift */,
 				868F42512630D1520022E19F /* WebsiteViewController.swift */,
 				863C7CEA263626AE00241850 /* TechnologyCell.swift */,
+				862BD66B26363162006110EE /* SecondWebsiteViewController.swift */,
+				8628258E263664FC0088B4A9 /* 41383-digital-finance-animation.json */,
+				862BD67B26365C2B006110EE /* 34115-rocket-lunch.json */,
+				86282591263666040088B4A9 /* 9697-ftw.json */,
+				86282594263668930088B4A9 /* LaunchViewController.swift */,
 			);
 			path = stonks;
 			sourceTree = "<group>";
@@ -169,7 +184,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				864658AE262BDB98007727DB /* LaunchScreen.storyboard in Resources */,
+				8628258F263664FC0088B4A9 /* 41383-digital-finance-animation.json in Resources */,
+				862BD67C26365C2B006110EE /* 34115-rocket-lunch.json in Resources */,
 				864658AB262BDB98007727DB /* Assets.xcassets in Resources */,
+				86282592263666040088B4A9 /* 9697-ftw.json in Resources */,
 				864658A9262BDB94007727DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,9 +245,11 @@
 				864658D5262D3EA8007727DB /* RoundButton.swift in Sources */,
 				864658C3262CB5E9007727DB /* TechnologyViewController.swift in Sources */,
 				863C7CEB263626AE00241850 /* TechnologyCell.swift in Sources */,
+				862BD66C26363162006110EE /* SecondWebsiteViewController.swift in Sources */,
 				864658D8262FD9B7007727DB /* FinanceCell.swift in Sources */,
 				864658BD262CB54A007727DB /* LoginViewController.swift in Sources */,
 				864658C0262CB5D6007727DB /* FinanceViewController.swift in Sources */,
+				86282595263668930088B4A9 /* LaunchViewController.swift in Sources */,
 				864658A2262BDB94007727DB /* AppDelegate.swift in Sources */,
 				864658A4262BDB94007727DB /* SceneDelegate.swift in Sources */,
 			);
@@ -382,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47M9MCF5WB;
 				INFOPLIST_FILE = stonks/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47M9MCF5WB;
 				INFOPLIST_FILE = stonks/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

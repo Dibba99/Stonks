@@ -107,22 +107,17 @@ class TechnologyViewController: UIViewController, UITableViewDataSource, UITable
         
         cell.posterView.af_setImage(withURL: posterURL!)
         
-        cell.backgroundView?.layer.cornerRadius = 5
-        cell.backgroundView?.clipsToBounds = true
-        
         return cell
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let index = tableView.indexPath(for: cell)!
+        let article = articles[index.row]
+        let websiteView = segue.destination as! SecondWebsiteViewController
+        websiteView.article = article
+        tableView.deselectRow(at: index, animated: true)
     }
-    */
 
 }

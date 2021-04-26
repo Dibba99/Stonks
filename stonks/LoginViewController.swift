@@ -10,6 +10,7 @@ import Parse
 import NotificationBannerSwift
 import MaterialComponents.MaterialTextControls_OutlinedTextAreas
 import MaterialComponents.MaterialTextControls_OutlinedTextFields
+import Lottie
 
 extension UIViewController{
     func HideKeyboard() {
@@ -67,6 +68,9 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        
+        lottieAnimation()
         
         self.HideKeyboard()
         
@@ -76,7 +80,6 @@ class LoginViewController: UIViewController {
         usertextField.sizeToFit()
         self.view.addSubview(usertextField)
         
-        
         passwordtextField.adjustsFontSizeToFitWidth = true
         passwordtextField.label.text = "Password"
         passwordtextField.placeholder = "Password"
@@ -85,6 +88,17 @@ class LoginViewController: UIViewController {
         self.view.addSubview(passwordtextField)
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func lottieAnimation(){
+        let animationview = AnimationView(name: "34115-rocket-lunch")
+        animationview.frame = CGRect(x: 110, y: 100, width: 200, height: 350)
+        //animationview.center = self.view.center
+        animationview.contentMode = .scaleAspectFill
+        view.addSubview(animationview)
+        animationview.play()
+        animationview.loopMode = .loop
     }
     
 

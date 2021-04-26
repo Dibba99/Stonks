@@ -11,5 +11,6 @@ target 'stonks' do
   pod 'NotificationBannerSwift', '~> 3.0.0'
   pod 'MaterialComponents/TextControls+OutlinedTextAreas'
   pod 'MaterialComponents/TextControls+OutlinedTextFields'
+  pod 'lottie-ios'
 
 end
