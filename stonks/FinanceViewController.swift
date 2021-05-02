@@ -33,7 +33,7 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
     
         
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c6dd39d340374529a4cd7ebb2e4d2b52")!
+        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=bb7b045c2afb4fa1ac4148821ff98bc5")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in

@@ -309,6 +309,7 @@
                                             <outlet property="posterView" destination="3Z0-Ng-qRL" id="Qk3-ZV-Stw"/>
                                             <outlet property="publishedLabel" destination="C3m-aB-zGi" id="HG0-eB-djj"/>
                                             <outlet property="titleLabel" destination="0tP-Qi-nOQ" id="h9R-Yn-Uod"/>
+                                            <segue destination="xHM-YI-cA9" kind="presentation" id="8wd-0P-Mi6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -317,8 +318,37 @@
                         <viewLayoutGuide key="safeArea" id="DcZ-yK-tah"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="ULM-eC-Mow"/>
+                    <navigationItem key="navigationItem" title="Search" id="ULM-eC-Mow">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="iQ6-0D-IVI">
+                            <connections>
+                                <action selector="clearButton:" destination="HYu-tK-uKk" id="jHx-BG-8qS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Asr-H4-KbD">
+                            <view key="customView" contentMode="scaleToFill" id="eR1-Cs-1UE">
+                                <rect key="frame" x="313" y="5.6666666666666679" width="95" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Results:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn6-Ha-dKb">
+                                        <rect key="frame" x="0.0" y="6.9999999999999609" width="58" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbs-CF-QrK">
+                                        <rect key="frame" x="60" y="6" width="38" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="articleResults" destination="Sbs-CF-QrK" id="GdY-Q0-u62"/>
                         <outlet property="searchTextField" destination="y7M-Ng-T8e" id="BC7-ak-RCp"/>
                         <outlet property="tableView" destination="ZRA-Cr-gqu" id="raX-tc-rnc"/>
                         <outlet property="viewAnimator" destination="TCV-9W-Kt4" id="qjt-ZA-hZm"/>
@@ -462,6 +492,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jae-yd-pZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850" y="1676"/>
+        </scene>
+        <!--Third Website View Controller-->
+        <scene sceneID="LYG-DD-vdV">
+            <objects>
+                <viewController storyboardIdentifier="ThirdWebsiteViewController" id="xHM-YI-cA9" customClass="ThirdWebsiteViewController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hNZ-ce-cG8">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wqS-FN-18m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Hr-qs-Hdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="1676"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gS5-md-P2t">

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NotificationBannerSwift
 
 extension String {
 
@@ -17,9 +18,20 @@ extension String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }
+
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var articles = [[String:Any]]()
-
+    
+    
+    @IBAction func clearButton(_ sender: Any) {
+        articles.removeAll()
+        tableView.reloadData()
+        searchTextField.text?.removeAll()
+        articleResults.text = "\(articles.count)"
+    }
+    
+    @IBOutlet weak var articleResults: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewAnimator: ViewAnimator!
     @IBOutlet weak var searchTextField: UITextField!
@@ -27,17 +39,27 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func searchButton(_ sender: Any) {
         let txt = searchTextField.text!
         let input = txt.trimAllSpace()
-        print(input)
         if input == "" || input.hasPrefix(" ") || input.hasSuffix(" "){
-            let alert = UIAlertController(title: "Whoops!", message: "Please don't leave search field blank!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Woah There!", message: "Please don't leave search field blank!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }else{
-        
-            let url = URL(string: "https://newsapi.org/v2/everything?q=\(input)&from=2021-04-30&to=2021-04-30&sortBy=popularity&apiKey=c6dd39d340374529a4cd7ebb2e4d2b52")!
+            let date = Date()
+            let calendar_date = Calendar.current
+            let date2 = Calendar.current.date(byAdding: .day, value: -5, to: date)!
+            let calendar_date2 = Calendar.current
+            let date_year = calendar_date.component(.year, from: date)
+            let date_month = calendar_date.component(.month, from: date)
+            let date_day = calendar_date.component(.day, from: date)
+            let date2_year = calendar_date2.component(.year, from: date2)
+            let date2_month = calendar_date2.component(.month, from: date2)
+            let date2_day = calendar_date2.component(.day, from: date2)
+            let official_date = "\(date_year)-\(date_month)-\(date_day)"
+            let official_date2 = "\(date2_year)-\(date2_month)-\(date2_day)"
+            let url = URL(string: "https://newsapi.org/v2/everything?q=\(input)&from=\(official_date2)&to=\(official_date)&sortBy=popularity&apiKey=bb7b045c2afb4fa1ac4148821ff98bc5")!
             let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-            let task = session.dataTask(with: request) { (data, response, error) in
+            let task = session.dataTask(with: request) { [self] (data, response, error) in
                  // This will run when the network request returns
                  if let error = error {
                     let alert = UIAlertController(title: "OOPS - trouble loading data", message: "\(error.localizedDescription)", preferredStyle: .alert)
@@ -48,14 +70,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                         let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
 
                     self.articles = dataDictionary["articles"] as! [[String:Any]]
+                    self.articleResults.text = "\(articles.count)"
+                    if articles.count != 0 {
+                        articleResults.textColor = UIColor.blue
+                    }else{
+                        articleResults.textColor = UIColor.red
+                    }
                     self.tableView.reloadData()
                  }
             }
             task.resume()
         }
     }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -65,22 +91,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         viewAnimator.layer.shadowOpacity = 20
         viewAnimator.layer.shadowOffset = .zero
         viewAnimator.layer.shadowRadius = 20
-
-        
         searchTextField.layer.cornerRadius = 10.0
         searchTextField.layer.borderWidth = 1.0
         searchTextField.layer.borderColor = UIColor.black.cgColor
         searchTextField.layer.masksToBounds = true
         
         view.bringSubviewToFront(viewAnimator)
-        // Do any additional setup after loading the view.
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCell") as! SearchCell
         
@@ -121,14 +142,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let index = tableView.indexPath(for: cell)!
+        let article = articles[index.row]
+        let websiteView = segue.destination as! ThirdWebsiteViewController
+        websiteView.article = article
+        tableView.deselectRow(at: index, animated: true)
     }
-    */
+    
 
 }
