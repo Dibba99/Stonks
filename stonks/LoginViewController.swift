@@ -90,7 +90,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+
     func lottieAnimation(){
         let animationview = AnimationView(name: "34115-rocket-lunch")
         animationview.frame = CGRect(x: 110, y: 100, width: 200, height: 350)
@@ -100,6 +100,7 @@ class LoginViewController: UIViewController {
         animationview.play()
         animationview.loopMode = .loop
     }
+ 
     
 
     /*

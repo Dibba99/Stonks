@@ -25,6 +25,10 @@
 		864658D5262D3EA8007727DB /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658D4262D3EA8007727DB /* RoundButton.swift */; };
 		864658D8262FD9B7007727DB /* FinanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658D7262FD9B7007727DB /* FinanceCell.swift */; };
 		868F42522630D1520022E19F /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868F42512630D1520022E19F /* WebsiteViewController.swift */; };
+		86B8EFC9263DF74600AC68ED /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFC8263DF74600AC68ED /* ViewAnimator.swift */; };
+		86B8EFCC263DF8E500AC68ED /* customTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFCB263DF8E500AC68ED /* customTextField.swift */; };
+		86B8EFD0263DFAB700AC68ED /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFCF263DFAB700AC68ED /* SearchViewController.swift */; };
+		86B8EFD3263DFE4F00AC68ED /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFD2263DFE4F00AC68ED /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		864658D4262D3EA8007727DB /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		864658D7262FD9B7007727DB /* FinanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceCell.swift; sourceTree = "<group>"; };
 		868F42512630D1520022E19F /* WebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
+		86B8EFC8263DF74600AC68ED /* ViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
+		86B8EFCB263DF8E500AC68ED /* customTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextField.swift; sourceTree = "<group>"; };
+		86B8EFCF263DFAB700AC68ED /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		86B8EFD2263DFE4F00AC68ED /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		954B2912C5F9B9F81D2F14B5 /* Pods-stonks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stonks.release.xcconfig"; path = "Target Support Files/Pods-stonks/Pods-stonks.release.xcconfig"; sourceTree = "<group>"; };
 		9FCD81A5704C009CB0D8B34C /* Pods_stonks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stonks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C3BDD04DE2E4861954EF76 /* Pods-stonks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stonks.debug.xcconfig"; path = "Target Support Files/Pods-stonks/Pods-stonks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +120,10 @@
 				862BD67B26365C2B006110EE /* 34115-rocket-lunch.json */,
 				86282591263666040088B4A9 /* 9697-ftw.json */,
 				86282594263668930088B4A9 /* LaunchViewController.swift */,
+				86B8EFC8263DF74600AC68ED /* ViewAnimator.swift */,
+				86B8EFCB263DF8E500AC68ED /* customTextField.swift */,
+				86B8EFCF263DFAB700AC68ED /* SearchViewController.swift */,
+				86B8EFD2263DFE4F00AC68ED /* SearchCell.swift */,
 			);
 			path = stonks;
 			sourceTree = "<group>";
@@ -242,16 +254,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				868F42522630D1520022E19F /* WebsiteViewController.swift in Sources */,
+				86B8EFD3263DFE4F00AC68ED /* SearchCell.swift in Sources */,
 				864658D5262D3EA8007727DB /* RoundButton.swift in Sources */,
 				864658C3262CB5E9007727DB /* TechnologyViewController.swift in Sources */,
 				863C7CEB263626AE00241850 /* TechnologyCell.swift in Sources */,
 				862BD66C26363162006110EE /* SecondWebsiteViewController.swift in Sources */,
 				864658D8262FD9B7007727DB /* FinanceCell.swift in Sources */,
 				864658BD262CB54A007727DB /* LoginViewController.swift in Sources */,
+				86B8EFCC263DF8E500AC68ED /* customTextField.swift in Sources */,
+				86B8EFD0263DFAB700AC68ED /* SearchViewController.swift in Sources */,
 				864658C0262CB5D6007727DB /* FinanceViewController.swift in Sources */,
 				86282595263668930088B4A9 /* LaunchViewController.swift in Sources */,
 				864658A2262BDB94007727DB /* AppDelegate.swift in Sources */,
 				864658A4262BDB94007727DB /* SceneDelegate.swift in Sources */,
+				86B8EFC9263DF74600AC68ED /* ViewAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

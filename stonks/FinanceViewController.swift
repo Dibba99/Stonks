@@ -24,13 +24,14 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         let user = PFUser.current()!.username as! String
         let banner = GrowingNotificationBanner(title: "Welcome back!", subtitle: "Hey \(user)! - explore new business headlines to make your future financial decision!", leftView: nil, rightView: nil, style: .success, colors: nil)
         
-        banner.show()
+        //banner.show()
         
         refreshController.addTarget(self, action: #selector(FinanceViewController.handleRefresh), for: .valueChanged)
         tableView.refreshControl = refreshController
         
         tableView.dataSource = self
         tableView.delegate = self
+    
         
         let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c6dd39d340374529a4cd7ebb2e4d2b52")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -126,6 +127,13 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         
         delegate.window?.rootViewController = loginViewController
     }
+    
+    
+    @IBAction func onSearch(_ sender: Any) {
+        //self.performSegue(withIdentifier: "searchFinance", sender: nil)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
