@@ -18,13 +18,14 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
     var articles = [[String:Any]]()
     let refreshController = UIRefreshControl()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let user = PFUser.current()!.username as! String
         let banner = GrowingNotificationBanner(title: "Welcome back!", subtitle: "Hey \(user)! - explore new business headlines to make your future financial decision!", leftView: nil, rightView: nil, style: .success, colors: nil)
         
-        //banner.show()
+        banner.show()
         
         refreshController.addTarget(self, action: #selector(FinanceViewController.handleRefresh), for: .valueChanged)
         tableView.refreshControl = refreshController

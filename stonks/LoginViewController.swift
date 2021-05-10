@@ -68,15 +68,10 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        
         lottieAnimation()
-        
         self.HideKeyboard()
-        
         usertextField.label.text = "Username"
         usertextField.placeholder = "Username"
-        //usertextField.leadingAssistiveLabel.text = "Please don't use spacing in username!"
         usertextField.sizeToFit()
         self.view.addSubview(usertextField)
         
