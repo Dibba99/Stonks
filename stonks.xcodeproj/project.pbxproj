@@ -26,10 +26,12 @@
 		864658D8262FD9B7007727DB /* FinanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864658D7262FD9B7007727DB /* FinanceCell.swift */; };
 		86789098263F420C00566B79 /* ThirdWebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86789097263F420C00566B79 /* ThirdWebsiteViewController.swift */; };
 		868F42522630D1520022E19F /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868F42512630D1520022E19F /* WebsiteViewController.swift */; };
+		86AEB081264A3A04005CBCB5 /* Error.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 86AEB080264A3A04005CBCB5 /* Error.mp3 */; };
 		86B8EFC9263DF74600AC68ED /* ViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFC8263DF74600AC68ED /* ViewAnimator.swift */; };
 		86B8EFCC263DF8E500AC68ED /* customTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFCB263DF8E500AC68ED /* customTextField.swift */; };
 		86B8EFD0263DFAB700AC68ED /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFCF263DFAB700AC68ED /* SearchViewController.swift */; };
 		86B8EFD3263DFE4F00AC68ED /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8EFD2263DFE4F00AC68ED /* SearchCell.swift */; };
+		86F37C6C264A396F00CD6F12 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 86F37C6B264A396F00CD6F12 /* success.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,10 +55,12 @@
 		864658D7262FD9B7007727DB /* FinanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceCell.swift; sourceTree = "<group>"; };
 		86789097263F420C00566B79 /* ThirdWebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdWebsiteViewController.swift; sourceTree = "<group>"; };
 		868F42512630D1520022E19F /* WebsiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
+		86AEB080264A3A04005CBCB5 /* Error.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Error.mp3; sourceTree = "<group>"; };
 		86B8EFC8263DF74600AC68ED /* ViewAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimator.swift; sourceTree = "<group>"; };
 		86B8EFCB263DF8E500AC68ED /* customTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTextField.swift; sourceTree = "<group>"; };
 		86B8EFCF263DFAB700AC68ED /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		86B8EFD2263DFE4F00AC68ED /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		86F37C6B264A396F00CD6F12 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
 		954B2912C5F9B9F81D2F14B5 /* Pods-stonks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stonks.release.xcconfig"; path = "Target Support Files/Pods-stonks/Pods-stonks.release.xcconfig"; sourceTree = "<group>"; };
 		9FCD81A5704C009CB0D8B34C /* Pods_stonks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stonks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C3BDD04DE2E4861954EF76 /* Pods-stonks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stonks.debug.xcconfig"; path = "Target Support Files/Pods-stonks/Pods-stonks.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				8628258E263664FC0088B4A9 /* 41383-digital-finance-animation.json */,
 				862BD67B26365C2B006110EE /* 34115-rocket-lunch.json */,
 				86282591263666040088B4A9 /* 9697-ftw.json */,
+				86AEB080264A3A04005CBCB5 /* Error.mp3 */,
+				86F37C6B264A396F00CD6F12 /* success.mp3 */,
 				86282594263668930088B4A9 /* LaunchViewController.swift */,
 				86B8EFC8263DF74600AC68ED /* ViewAnimator.swift */,
 				86B8EFCB263DF8E500AC68ED /* customTextField.swift */,
@@ -199,9 +205,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				864658AE262BDB98007727DB /* LaunchScreen.storyboard in Resources */,
+				86AEB081264A3A04005CBCB5 /* Error.mp3 in Resources */,
 				8628258F263664FC0088B4A9 /* 41383-digital-finance-animation.json in Resources */,
 				862BD67C26365C2B006110EE /* 34115-rocket-lunch.json in Resources */,
 				864658AB262BDB98007727DB /* Assets.xcassets in Resources */,
+				86F37C6C264A396F00CD6F12 /* success.mp3 in Resources */,
 				86282592263666040088B4A9 /* 9697-ftw.json in Resources */,
 				864658A9262BDB94007727DB /* Main.storyboard in Resources */,
 			);

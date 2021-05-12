@@ -7,6 +7,7 @@
 
 import UIKit
 import NotificationBannerSwift
+import AVFoundation
 
 extension String {
 
@@ -42,6 +43,7 @@ extension UITableView {
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var articles = [[String:Any]]()
+    var player: AVAudioPlayer?
     
     
     @IBAction func clearButton(_ sender: Any) {
@@ -64,6 +66,28 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             let alert = UIAlertController(title: "Woah There!", message: "Please don't leave search field blank!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
             self.present(alert, animated: true)
+            if let player = self.player, player.isPlaying {
+                player.stop()
+            }else{
+                let urlString = Bundle.main.path(forResource: "Error", ofType: "mp3")
+                do {
+                    try AVAudioSession.sharedInstance().setMode(.default)
+                    try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                    
+                    guard let urlString = urlString else {
+                        return
+                    }
+                    
+                    self.player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                    guard let player = self.player else {
+                        return
+                    }
+                    player.play()
+                }
+                catch {
+                    print("oops something went wrong")
+                }
+            }
         }else{
             let date = Date()
             let calendar_date = Calendar.current
@@ -94,8 +118,52 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.articleResults.text = "\(articles.count)"
                     if articles.count != 0 {
                         articleResults.textColor = UIColor.blue
+                        if let player = self.player, player.isPlaying {
+                            player.stop()
+                        }else{
+                            let urlString = Bundle.main.path(forResource: "success", ofType: "mp3")
+                            do {
+                                try AVAudioSession.sharedInstance().setMode(.default)
+                                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                                
+                                guard let urlString = urlString else {
+                                    return
+                                }
+                                
+                                self.player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                                guard let player = self.player else {
+                                    return
+                                }
+                                player.play()
+                            }
+                            catch {
+                                print("oops something went wrong")
+                            }
+                        }
                     }else{
                         articleResults.textColor = UIColor.red
+                        if let player = self.player, player.isPlaying {
+                            player.stop()
+                        }else{
+                            let urlString = Bundle.main.path(forResource: "Error", ofType: "mp3")
+                            do {
+                                try AVAudioSession.sharedInstance().setMode(.default)
+                                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+                                
+                                guard let urlString = urlString else {
+                                    return
+                                }
+                                
+                                self.player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+                                guard let player = self.player else {
+                                    return
+                                }
+                                player.play()
+                            }
+                            catch {
+                                print("oops something went wrong")
+                            }
+                        }
                     }
                     self.tableView.reloadData()
                  }
@@ -161,7 +229,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let posterPath = article["urlToImage"] as? String
         let posterURL = URL(string: posterPath ?? "nil")
         
-        cell.posterView.af_setImage(withURL: posterURL!)
+        cell.posterView.downloaded(from: posterURL!)
         
         cell.backgroundView?.layer.cornerRadius = 5
         cell.backgroundView?.clipsToBounds = true

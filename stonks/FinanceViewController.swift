@@ -7,8 +7,28 @@
 
 import UIKit
 import Parse
-import AlamofireImage
 import NotificationBannerSwift
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
+}
 
 class FinanceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -21,8 +41,7 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let user = PFUser.current()!.username as! String
+        let user = PFUser.current()!.username!
         let banner = GrowingNotificationBanner(title: "Welcome back!", subtitle: "Hey \(user)! - explore new business headlines to make your future financial decision!", leftView: nil, rightView: nil, style: .success, colors: nil)
         
         banner.show()
@@ -34,7 +53,7 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.delegate = self
     
         
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=bb7b045c2afb4fa1ac4148821ff98bc5")!
+        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c6dd39d340374529a4cd7ebb2e4d2b52")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -113,7 +132,7 @@ class FinanceViewController: UIViewController, UITableViewDataSource, UITableVie
         let posterPath = article["urlToImage"] as? String
         let posterURL = URL(string: posterPath ?? "nil")
         
-        cell.posterView.af_setImage(withURL: posterURL!)
+        cell.posterView.downloaded(from: posterURL!)
         
         cell.backgroundView?.layer.cornerRadius = 5
         cell.backgroundView?.clipsToBounds = true

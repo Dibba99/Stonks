@@ -7,7 +7,6 @@
 
 import UIKit
 import Parse
-import AlamofireImage
 import NotificationBannerSwift
 
 class TechnologyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -36,7 +35,7 @@ class TechnologyViewController: UIViewController, UITableViewDataSource, UITable
         tableView.delegate = self
         tableView.dataSource = self
         
-        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=bb7b045c2afb4fa1ac4148821ff98bc5")!
+        let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=c6dd39d340374529a4cd7ebb2e4d2b52")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
@@ -105,7 +104,7 @@ class TechnologyViewController: UIViewController, UITableViewDataSource, UITable
         let posterPath = article["urlToImage"] as? String
         let posterURL = URL(string: posterPath ?? "nil")
         
-        cell.posterView.af_setImage(withURL: posterURL!)
+        cell.posterView.downloaded(from: posterURL!)
         
         return cell
     }
