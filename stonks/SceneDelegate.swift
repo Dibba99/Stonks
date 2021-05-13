@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  stonks
 //
-//  Created by Cosmo on 4/17/21.
+//  Created by  on 4/17/21.
 //
 
 import UIKit

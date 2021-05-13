@@ -2,7 +2,7 @@
 //  RoundButton.swift
 //  stonks
 //
-//  Created by Cosmo on 4/19/21.
+//  Created by Dibba on 4/19/21.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  SearchViewController.swift
 //  stonks
 //
-//  Created by Cosmo on 5/1/21.
+//  Created by  on 5/1/21.
 //
 
 import UIKit

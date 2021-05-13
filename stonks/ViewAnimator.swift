@@ -2,7 +2,7 @@
 //  AnimView.swift
 //  Momaps
 //
-//  Created by Cosmo on 4/28/21.
+//  Created by  on 4/28/21.
 //
 
 import UIKit

@@ -733,10 +733,10 @@
             </objects>
             <point key="canvasLocation" x="1604" y="1676"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Remember Tab Bar Controller-->
         <scene sceneID="gS5-md-P2t">
             <objects>
-                <tabBarController storyboardIdentifier="FeedTabBarController" modalPresentationStyle="fullScreen" id="1Yt-1v-ed7" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="FeedTabBarController" modalPresentationStyle="fullScreen" id="1Yt-1v-ed7" customClass="RememberTabBarController" customModule="stonks" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LDO-6S-iwg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

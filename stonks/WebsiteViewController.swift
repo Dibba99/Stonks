@@ -2,7 +2,7 @@
 //  WebsiteViewController.swift
 //  stonks
 //
-//  Created by Cosmo on 4/21/21.
+//  Created by  on 4/21/21.
 //
 
 import UIKit

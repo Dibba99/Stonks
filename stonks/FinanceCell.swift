@@ -2,7 +2,7 @@
 //  FinanceCell.swift
 //  stonks
 //
-//  Created by Cosmo on 4/20/21.
+//  Created by  on 4/20/21.
 //
 
 import UIKit

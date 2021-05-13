@@ -2,7 +2,7 @@
 //  TechnologyViewController.swift
 //  stonks
 //
-//  Created by Cosmo on 4/18/21.
+//  Created by Dibba on 4/18/21.
 //
 
 import UIKit

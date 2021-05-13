@@ -2,7 +2,7 @@
 //  ThirdWebsiteViewController.swift
 //  stonks
 //
-//  Created by Cosmo on 5/2/21.
+//  Created by  on 5/2/21.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  SecondWebsiteViewController.swift
 //  stonks
 //
-//  Created by Cosmo on 4/25/21.
+//  Created by  on 4/25/21.
 //
 
 import UIKit
