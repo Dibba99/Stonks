@@ -17,15 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pngegg" translatesAutoresizingMaskIntoConstraints="NO" id="SWi-VO-jUS">
-                                <rect key="frame" x="0.0" y="201" width="414" height="494"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngegg" translatesAutoresizingMaskIntoConstraints="NO" id="SWi-VO-jUS">
+                                <rect key="frame" x="54" y="299" width="306" height="299"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="299" id="hii-lZ-lky"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SWi-VO-jUS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dBC-uL-klm"/>
-                            <constraint firstItem="SWi-VO-jUS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kio-ug-VbQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SWi-VO-jUS" secondAttribute="trailing" constant="54" id="5QS-yy-dV7"/>
+                            <constraint firstItem="SWi-VO-jUS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="255" id="MY2-L5-vD7"/>
+                            <constraint firstItem="SWi-VO-jUS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="dUz-e1-i7F"/>
                         </constraints>
                     </view>
                 </viewController>

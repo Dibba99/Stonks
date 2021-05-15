@@ -51,6 +51,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.reloadData()
         searchTextField.text?.removeAll()
         articleResults.text = "\(articles.count)"
+        viewAnimator.layer.shadowColor = UIColor.black.cgColor
     }
     
     @IBOutlet weak var articleResults: UILabel!
@@ -60,9 +61,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var searchTextField: UITextField!
     
     @IBAction func searchButton(_ sender: Any) {
+        self.view.endEditing(true)
         let txt = searchTextField.text!
         let input = txt.trimAllSpace()
         if input == "" || input.hasPrefix(" ") || input.hasSuffix(" "){
+            viewAnimator.shake()
+            viewAnimator.layer.shadowColor = UIColor.red.cgColor
             let alert = UIAlertController(title: "Woah There!", message: "Please don't leave search field blank!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
             self.present(alert, animated: true)
@@ -118,6 +122,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.articleResults.text = "\(articles.count)"
                     if articles.count != 0 {
                         articleResults.textColor = UIColor.blue
+                        viewAnimator.layer.shadowColor = UIColor.black.cgColor
                         if let player = self.player, player.isPlaying {
                             player.stop()
                         }else{
@@ -141,6 +146,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                             }
                         }
                     }else{
+                        viewAnimator.shake()
+                        articleResults.shake()
+                        viewAnimator.layer.shadowColor = UIColor.red.cgColor
                         articleResults.textColor = UIColor.red
                         if let player = self.player, player.isPlaying {
                             player.stop()
@@ -184,6 +192,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchTextField.layer.borderWidth = 1.0
         searchTextField.layer.borderColor = UIColor.black.cgColor
         searchTextField.layer.masksToBounds = true
+        searchTextField.attributedPlaceholder = NSAttributedString(string: "Search!", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        searchTextField.setLeftPaddingPoints(10)
         
         view.bringSubviewToFront(viewAnimator)
     }

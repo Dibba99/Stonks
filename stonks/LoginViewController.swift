@@ -35,6 +35,20 @@ extension UITextField {
     }
 }
 
+public extension UIView {
+
+    func shake(count : Float = 7,for duration : TimeInterval = 0.3,withTranslation translation : Float = 5) {
+
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.repeatCount = count
+        animation.duration = duration/TimeInterval(animation.repeatCount)
+        animation.autoreverses = true
+        animation.values = [translation, -translation]
+        layer.add(animation, forKey: "shake")
+    }
+}
+
 class LoginViewController: UIViewController {
     
     var player: AVAudioPlayer?
@@ -73,6 +87,13 @@ class LoginViewController: UIViewController {
                     }
                 }
             }else{
+                self.usernameField.shake()
+                self.passwordField.shake()
+                self.usernameField.layer.borderWidth = 1.0
+                self.usernameField.layer.borderColor = UIColor.red.cgColor
+                self.passwordField.layer.borderWidth = 1.0
+                self.passwordField.layer.borderColor = UIColor.red.cgColor
+                
                 let error = error?.localizedDescription as! String
                 let banner = GrowingNotificationBanner(title: "Please try again!", subtitle: "\(error)", leftView: nil, rightView: nil, style: .danger, colors: nil)
                 
@@ -134,6 +155,12 @@ class LoginViewController: UIViewController {
                     }
                 }
             }else{
+                self.usernameField.shake()
+                self.passwordField.shake()
+                self.usernameField.layer.borderWidth = 1.0
+                self.usernameField.layer.borderColor = UIColor.red.cgColor
+                self.passwordField.layer.borderWidth = 1.0
+                self.passwordField.layer.borderColor = UIColor.red.cgColor
                 let error = error?.localizedDescription as! String
                 let banner = GrowingNotificationBanner(title: "OOPS!", subtitle: "\(error)", leftView: nil, rightView: nil, style: .danger, colors: nil)
                 
